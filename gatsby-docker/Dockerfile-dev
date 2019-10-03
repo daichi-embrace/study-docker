@@ -4,7 +4,9 @@ RUN npm install -g gatsby-cli
 
 WORKDIR /app
 
-# COPY ./package.json ./
-# COPY ./yarn.lock ./
+COPY ./blog/package.json ./
+COPY ./blog/yarn.lock ./
+
+RUN ls ./ | xargs echo
 
 EXPOSE 8000

@@ -1,7 +1,7 @@
 version: "3"
 services:
   gatsby:
-    image: gatsby-blog:emb08
+    image: gatsby-blog:emb09
     container_name: gatsby-blog
     build:
       context: ./gatsby-docker
@@ -13,10 +13,10 @@ services:
       TZ: Asia/Tokyo
     working_dir: /app
     volumes:
-      - ./blog:/app
+      - ./gatsby-docker/blog:/app
       - node_modules:/app/node_modules
     # entrypoint: "gatsby develop --host=0.0.0.0"
-    entrypoint: "sh -c 'yarn install && yarn start'"
+    entrypoint: "sh -c 'pwd && ls -la && yarn install && yarn start'"
 
 volumes:
   node_modules:

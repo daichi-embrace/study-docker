@@ -7,8 +7,8 @@ services:
     ports:
       - 8080:80
     environment:
-      WORDPRESS_DB_PASSWORD: my-sercret-pw
-      # WORDPRESS_DB_PASSWORD: ${MYSQLPASSWORD}
+      # WORDPRESS_DB_PASSWORD: my-sercret-pw
+      WORDPRESS_DB_PASSWORD: ${MYSQLPASSWORD}
       TZ: Asia/Tokyo
 
   mysql:
@@ -17,8 +17,8 @@ services:
     restart: always
     # env_file: dev.env
     environment:
-      MYSQL_ROOT_PASSWORD: my-sercret-pw
-      # MYSQL_ROOT_PASSWORD: ${MYSQLPASSWORD}
+      # MYSQL_ROOT_PASSWORD: my-sercret-pw
+      MYSQL_ROOT_PASSWORD: ${MYSQLPASSWORD}
       TZ: Asia/Tokyo
-    # volumes:
-    #   - ./data:/var/lib/mysql
+    volumes:
+      - ./data:/var/lib/mysql
