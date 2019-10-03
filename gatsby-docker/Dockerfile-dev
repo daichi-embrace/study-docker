@@ -7,6 +7,4 @@ WORKDIR /app
 COPY ./blog/package.json ./
 COPY ./blog/yarn.lock ./
 
-RUN ls ./ | xargs echo
-
 EXPOSE 8000
