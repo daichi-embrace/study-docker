@@ -1,0 +1,24 @@
+version: "3"
+services:
+  wordpress:
+    image: wordpress
+    container_name: some-wordpress
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_PASSWORD: my-sercret-pw
+      # WORDPRESS_DB_PASSWORD: ${MYSQLPASSWORD}
+      TZ: Asia/Tokyo
+
+  mysql:
+    image: mysql:5.7
+    container_name: some-mysql
+    restart: always
+    # env_file: dev.env
+    environment:
+      MYSQL_ROOT_PASSWORD: my-sercret-pw
+      # MYSQL_ROOT_PASSWORD: ${MYSQLPASSWORD}
+      TZ: Asia/Tokyo
+    # volumes:
+    #   - ./data:/var/lib/mysql
